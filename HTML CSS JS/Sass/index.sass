@@ -1,0 +1,22 @@
+@mixin theme($theme: DarkGray)
+  background: $theme
+  box-shadow: 10px 10px 10px rgba($theme, .5)
+  color: tomato
+  padding: 20px 0
+  margin: 30px 0
+
+
+.info
+  @include theme
+
+.alert
+  @include theme($theme: DarkBlue)
+  color: blue
+  font-size: 50px
+  width: 100%
+  heith: 200px
+
+.success
+  @include theme($theme: DarkGreen)
+  color: white
+  font-size: 300px
