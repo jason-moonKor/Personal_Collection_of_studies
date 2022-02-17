@@ -1,0 +1,98 @@
+저번시간 숙제 및 공부할것들
+
+이펙티브 타입스크립트 2장 공부
+
+ts.config
+noImplicitAny
+stricNullCheck
+
+클로저, 실행 컨텍스트=====공부숙제
+디바운스========숙제 -> 쓰로틀, 디바운스 한셋트다
+
+lodash
+--------------------------------------------------------------------
+//공부하다 재밌는거 발견
+//float와같은 실수는 비교연산 실행시 버그가 난다. float, double 과같은 변수들은 비교연산을 지양해야한다
+
+const a = 0.9;
+const b = 0.3;
+
+if (a === b) {
+	console.log(true);
+} else {
+	console.log(false);
+}
+
+
+//
+
+let a = { count : 1 };
+let b = { count : 1 };
+
+if(a === b){ console.log("같다") }
+else { console.log("다르다") }
+-------------------------------
+
+- 실행 컨텍스트(execution context)
+
+자바스크립트 실행 컨텍스트는 실행가능한 코드를 형상화 하고 구분하는 추상적인 개념
+자바스크립트 코드가 실행이 되는 환경 정도로 이해하면 된다.
+​
+자바스크립트에서 실행 컨텍스트가 생성되는 조건은 다음과 같다.
+
+- 함수 실행
+- eval() 실행
+- 전역 실행
+
+- 디바운스란?
+짧은 시간 간격으로 이벤트가 연속해서 발생하면 이벤트 핸들러를 호출하지 않다가 일정 시간이 경과한 이후에 이벤트 핸들러가 한 번만 호출되도록 한다.
+즉, 디바운스는 짧은 시간 간격으로 발생하는 이벤트를 그룹화해서 마지막에 한 번만 이벤트 핸들러가 호출되도록 한다.
+디바운스는 resize 이벤트 처리나 input 요소에 입력된 값으로 AJAX 요청하는 입력 필드 자동완성 UI 구현, 버튼 중복 클릭 방지 처리 등에 유용하게 사용된다.
+
+디바운스 CODE :
+
+document.querySelector(".search-box").addEventListener(
+  "input",
+  debounce((event) => {
+    // Api Call
+    console.log(event.target.value);
+  }, 1000)
+);
+
+function debounce(func, delay) {
+
+  // timeoutID를 할당할 변수를 선언합니다.
+  let timer = null;
+  
+  // timer 변수에 접근 가능한 클로저 함수를 반환합니다.
+  return function (...args) {
+  
+    // 만약 타이머가 존재한다면 타이머를 취소시킵니다.
+    if (timer) {
+      clearTimeout(timer);
+    }
+    
+    // 타이머를 새로 만듭니다.
+    timer = setTimeout(() => func(...args), delay);
+  }
+}
+
+
+
+
+
+
+- 쓰로틀 Throttle
+
+짧은 시간 간격으로 이벤트가 연속해서 발생하더라도 일정 시간 간격으로 이벤트 핸들러가 최대 한 번만 호출되도록 한다.
+▶ 함수 호출 주기 동안 함수가 한 번만 호출된다.
+즉, 스로틀은 짧은 시간 간격으로 연속해서 발생하는 이벤트를 그룹화해서 일정 시간 단위로 이벤트 핸들러가 호출되도록 호출 주기를 만든다.
+
+스로틀은 scroll 이벤트 처리나 무한 스크롤(infinite scrolling) UI 구현 등에 유용하게 사용된다.
+
+실무에서는 Underscore 또는 Lodash의 throttle 함수를 사용하는 것을 권장한다.
+
+*Lodash는 자바스크립트의 라이브러리다.
+여러가지 기능이있지만 배열이나 객체의 정렬 (sordby, orderby)이나 디바운스, 스로틀기능을 주로 많이씀
+
+
