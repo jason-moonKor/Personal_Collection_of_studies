@@ -1,14 +1,14 @@
-const backgroundColor = randomColor();
-const h1Color = randomColor();
+// const backgroundColor = randomColor();
+// const h1Color = randomColor();
 
 body = document.querySelector("body");
 h1 = document.querySelectorAll("h1");
 
-body.style.backgroundColor = backgroundColor;
+body.style.backgroundColor = randomColor();
 
 h1.forEach((item) => {
-	item.style.color = h1Color;
-	item.style.fontSize = "100px";
+	item.style.color = randomColor();
+	item.style.fontSize = "50px";
 });
 
 setTimeout(() => {

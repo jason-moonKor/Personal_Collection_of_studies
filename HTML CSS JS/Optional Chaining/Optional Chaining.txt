@@ -1,0 +1,32 @@
+Optional Chaining
+
+```
+//without optional chaining
+const hasWorld = response && response.data && response.data.msg && response.data.msg.includes('world');
+
+
+//with optional chaining
+const hasWorld = response?.data?.msg?.includes('world');
+```
+이런식으로 짧게 표현가능
+
+
+- 참고 URL : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+
+
+> 참고 코드
+```
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;    => adventurer안에 dog 라는 객체가 있으면 dog에 name을 dogName변수에 할당
+console.log(dogName);       => adventurer에 dog라는 객체가 없으므로 false가 되므로 undefined
+// expected output: undefined
+
+console.log(adventurer.someNonExistentMethod?.());
+// expected output: undefined
+```
