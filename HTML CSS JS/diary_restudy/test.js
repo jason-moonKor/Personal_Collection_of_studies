@@ -1,5 +1,3 @@
-// import React, {useState, useRef} from "react";
-
 // function test() {
 // 	const nameRef = useRef();
 // 	const contentRef = useRef();
@@ -56,18 +54,32 @@
 
 // export default test;
 
-const date = new Date();
-const date2 = new Date().getTime(); // getTime() = 밀리세컨으로 바꿈
-const date3 = new Date(date2).toLocaleString();
-const date4 = new Date().toLocaleString();
-const date5 = new Date().toLocaleDateString();
-const date6 = new Date().toLocaleTimeString();
-const date7 = new Date().toString();
+// const date = new Date();
+// const date2 = new Date().getTime(); // getTime() = 밀리세컨으로 바꿈
+// const date3 = new Date(date2).toLocaleString();
+// const date4 = new Date().toLocaleString();
+// const date5 = new Date().toLocaleDateString();
+// const date6 = new Date().toLocaleTimeString();
+// const date7 = new Date().toString();
 
-console.log(date); //object
-console.log(date2); // number
-console.log(date3); //string
-console.log(date4); //string
-console.log(date5); //string
-console.log(date6); //string
-console.log(date7); //string
+// console.log(date); //object
+// console.log(date2); // number
+// console.log(date3); //string
+// console.log(date4); //string
+// console.log(date5); //string
+// console.log(date6); //string
+// console.log(date7); //string
+
+const getData = async () => {
+	const res = await fetch("https://jsonplaceholder.typicode.com/photos").then(
+		(res) => res.json()
+	);
+
+	const sliceData = res.slice(0, 100).map((it) => it.thumbnailUrl);
+
+	const root = document.querySelector(".root");
+	sliceData.forEach((it) => {
+		root.innerHTML += `<img src=${it}/>`; // += 를 안쓰면 계속 한자리에 겹쳐서 나온다...이것땜에 1시간 고생함...하..ㅠㅠ
+	});
+};
+getData();
