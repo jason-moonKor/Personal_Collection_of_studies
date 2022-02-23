@@ -36,3 +36,44 @@ const testFunction = useMemo( ()=>{ //함수의 내용 },[디펜던시어레이�
 useMemo로 감싼 함수는 사용될때 ()를 빼고 값처럼 사용해야한다
 
 useCallback => setState에 함수형으로 내보내줘야한다
+
+export const diaryContext = React.createContext(); createContext 는 생성갯수에 제한이 없다 export const diaryDispatchContext = React.createContext(); 와 같이 나눠서 보내줄수있고 Provider안에 중첩으로 넣어주면된다
+
+컨텍스트를 export로 내보내기하고 createContext()로 선언한다
+
+본문 리턴안에 <diaryContext.Provider> 안에 본문 내용들을 다 넣어주고
+
+<diaryContext.Provider value={//보내줄 props}> 밸류안에 넣어주면 프로바이더 안에서 밸류로 보내준 프롭스를 다 쓸수있다.
+
+하위에서 받아올땐
+
+const getTest = useContext(diaryContext) 로 받아오면된다(임포트 해줘야함)
+
+react-router-dom의 사용할 기능 3가지 : useParam, useSearchParams, useNavigate
+
+useParam = path Variable
+
+```
+<Routes> //상위
+    <Route path="/diary/id" element={<Diary/>} />
+</Routes>
+
+//하위
+import {useParams} from "react-router-dom"
+const {id} = useParams();
+console.log(id)
+//url에 diary/(id)  를 받아올수있다
+```
+
+Query를 관리하는 useSearchParams ex) /edit?id=10&mode=dark 웹페이지에 데이터를 전달하는 가장 간단한 방법
+
+```
+import {useSearchParams} from "react-router-dom"
+
+const [searchParam, setSearchParam] = useSearchParams();
+const id = serachParam.get("id");
+console.log("id : ",id);
+setSearchParam({name:"jason"}) //이렇게 바꾸면 url에 /edit?name=jason 으로 들어간다
+```
+
+const navigate = useNavigate(); navigate("/home") => 페이지를 홈으로 간다. like <Link> navigate(-1) => 뒤로가기기능
