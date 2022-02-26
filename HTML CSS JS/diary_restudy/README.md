@@ -77,3 +77,21 @@ setSearchParam({name:"jason"}) //이렇게 바꾸면 url에 /edit?name=jason 으
 ```
 
 const navigate = useNavigate(); navigate("/home") => 페이지를 홈으로 간다. like <Link> navigate(-1) => 뒤로가기기능
+
+//css
+
+flex-grow:1 => 가지고있는(나머지) 간격의 전체를 가질수있게된다.
+
+배열안에 , 없애기 ex) ["abcd","bbbb","cccc"].join(" ") => abcd bbbbb cccc. => 하나로 합쳐주고 중간에 쉼표(기본)를 원하는 문자로 바꿔준다
+
+const date = new Date().getTime 으로 밀리세컨즈로 사람이 한눈에 알아보기 어렵게 만들어놓은 객체를
+
+new Date(date).toLocaleDateString(); 으로 다시 보기쉽게 바꿔줄수있다.(2021. 12. 8.) 이런식으로 바뀜
+
+div 안에도 onClick이벤트 가능...
+
+date 객체에 .toISOString()를 사용하면 yyyy-mm-dd 이런식으로 시간까지 뒤로 쭉나오는데 .slice(0,10)으로 인덱스0~9까지 짜르면 년월일 까지만 딱 나온다. ex) 2022-02-26
+
+display:grid; //그리드 방식으로 디스플레이 grid-template-columns: repeat(5,auto); //가로방향으로 정렬하는데 5개가 한줄로 놓고 크기는 auto로 한다.(크기가 줄어들면 저절로 줄어들고 커지면 커진다.) gap:2% // 각 객체들 사이의 간격
+
+css resize : vertical = 가로로는 마우스로 크기조절 불가능하고 위아래로만 조절가능
