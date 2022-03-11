@@ -1,0 +1,32 @@
+// $color: royalblue;
+// $size: 100px;
+
+// .info {
+// 	h1 {
+// 		color: $color;
+// 		font-size: $size;
+// 	}
+// }
+
+$number: 1;
+$string: bold;
+$color: red;
+$boolean: true;
+$null: null;
+$list: orange, royalblue, yellow;
+$map: (
+	o: orange,
+	r: royalblue,
+	y: yellow
+);
+@each $key, $value in $map {
+	.box-#{$key} {
+		color: $value;
+	}
+}
+
+// @each $c in $list {
+// 	.box {
+// 		color: $c;
+// 	}
+// }
