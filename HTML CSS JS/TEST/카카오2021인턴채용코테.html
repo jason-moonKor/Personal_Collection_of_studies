@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function solution(s) {
+				let numbers = [
+					"zero",
+					"one",
+					"two",
+					"three",
+					"four",
+					"five",
+					"six",
+					"seven",
+					"eight",
+					"nine"
+				];
+				var answer = s;
+
+				for (let i = 0; i < numbers.length; i++) {
+					let arr = answer.split(numbers[i]);
+					console.log(`arr${i} = ` + arr);
+					answer = arr.join(i);
+					console.log(`answer${i} = ` + answer);
+				}
+				console.log(typeof answer);
+				console.log(typeof Number(answer));
+				return console.log(Number(answer));
+			}
+			solution("123onenine");
+		</script>
+	</body>
+</html>
