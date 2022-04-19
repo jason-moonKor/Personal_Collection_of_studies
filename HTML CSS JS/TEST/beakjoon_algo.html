@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <script>
+			function aa(nums) {
+				const noDuplicatePokemon = new Set(nums);
+				const pokemonVarietyCount = noDuplicatePokemon.size;
+
+				console.log(noDuplicatePokemon);
+				console.log(pokemonVarietyCount);
+			}
+
+			const num = [1, 2, 3, 2, 5, 4, 4];
+			aa(num);
+		</script> -->
+
+		<!-- <script>
+			function solution(left, right) {
+				let count = [];
+				let num = [];
+				for (let i = left; i <= right; i++) {
+					count.push(i);
+					num = count % i === 0;
+				}
+				console.log(count);
+				console.log(num);
+			}
+
+			solution(10, 15);
+		</script> -->
+
+		<!-- <script>
+			const aa = ["jason", "moon", "jaesang"];
+			const bb = ["moon", "jason"];
+
+			function solution(a, b) {
+				var answer = "";
+
+				let abbb = JSON.stringify(a);
+				let baaa = JSON.stringify(b);
+
+				let test = abbb - baaa;
+
+				console.log(test);
+
+				return answer;
+			}
+			solution(aa, bb);
+		</script> -->
+
+		<!-- <script>
+			const test = (a, b) => {
+				const plus = a + b;
+				const minus = a - b;
+				const gob = a * b;
+				const nanu = a / b;
+				const mok = a % b;
+
+				console.log(plus);
+				console.log(minus);
+				console.log(gob);
+				console.log(Math.floor(nanu));
+				console.log(mok);
+			};
+
+			test(7, 3);
+		</script> -->
+
+		<!-- https://www.acmicpc.net/problem/10926 -->
+		<!-- <script>
+			const test = (words) => {
+				console.log(words + "??!");
+			};
+			test("jason");
+		</script> -->
+
+		<!-- https://www.acmicpc.net/problem/18108
+		<script>
+			const test = (a) => {
+				console.log(a - 543);
+			};
+
+			test(2541);
+		</script> -->
+
+		<!-- https://www.acmicpc.net/problem/10430
+		<script>
+			const test = (a, b, c) => {
+				console.log((a + b) % c);
+				console.log(((a % b) + (b % c)) % c);
+				console.log((a * b) % c);
+				console.log(((a % b) * (b % c)) % c);
+			};
+
+			test(5, 8, 4);
+		</script> -->
+
+		<!-- https://www.acmicpc.net/problem/2588
+		<script>
+			const test = (a, b) => {
+				const one = a * (b % 10);
+				const two = a * Math.floor((b % 100) / 10);
+				const three = a * Math.floor(b / 100);
+
+				console.log(one);
+				console.log(two);
+				console.log(three);
+
+				console.log(one + two * 10 + three * 100);
+			};
+
+			test(472, 385);
+		</script> -->
+
+		<!-- https://www.acmicpc.net/problem/1330
+		<script>
+			const test = (a, b) => {
+				if (a > b) console.log(">");
+				else if (a < b) console.log("<");
+				else console.log("==");
+			};
+
+			test(2, 2);
+		</script> -->
+
+		<!-- https://www.acmicpc.net/problem/9498
+		<script>
+			const test = (a) => {
+				if (a > 89) console.log("A");
+				else if (79 < a && a < 90) console.log("B");
+				else if (69 < a && a < 80) console.log("C");
+				else if (59 < a && a < 70) console.log("D");
+				else console.log("F");
+			};
+			test(59);
+		</script> -->
+
+		<!-- 윤년인지맞추기
+		<script>
+			const test = (a) => {
+				if ((a % 4 === 0 && !(a % 100 === 0)) || a % 400 === 0) {
+					console.log(1);
+				} else {
+					console.log(0);
+				}
+			};
+			test();
+		</script> -->
+
+		<script>
+			const test = (a, b) => {
+				if (a > 0 && b > 0) console.log(1);
+				if (a < 0 && b > 0) console.log(2);
+				if (a < 0 && b < 0) console.log(3);
+				if (a > 0 && b < 0) console.log(4);
+			};
+			test(-9, 13);
+		</script>
+	</body>
+</html>
